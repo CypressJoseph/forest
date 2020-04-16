@@ -1,0 +1,182 @@
+{
+  "id": "root node id",
+  "filePath": "<unknown file>",
+  "children": [
+    {
+      "id": "desc1: outer",
+      "kind": "describe:run",
+      "label": "desc1: outer",
+      "nesting": 1,
+      "ordering": 30000,
+      "parentID": "root node id",
+      "children": [
+        {
+          "id": "desc1: inner",
+          "kind": "describe:run",
+          "label": "desc1: inner",
+          "nesting": 2,
+          "ordering": 30000,
+          "parentID": "desc1: outer",
+          "children": [
+            {
+              "id": "desc1: innner it1",
+              "kind": "assert:it:run",
+              "label": "desc1: innner it1",
+              "nesting": 3,
+              "ordering": 20000,
+              "parentID": "desc1: inner"
+            },
+            {
+              "id": "desc1: inner beforeAll",
+              "kind": "hook:before-all",
+              "nesting": 3,
+              "ordering": 0,
+              "parentID": "desc1: inner"
+            },
+            {
+              "id": "desc1: inner beforeEach",
+              "kind": "hook:before-each",
+              "nesting": 3,
+              "ordering": 10001,
+              "parentID": "desc1: inner"
+            },
+            {
+              "id": "desc1: inner afterAll",
+              "kind": "hook:after-all",
+              "nesting": 3,
+              "ordering": 50002,
+              "parentID": "desc1: inner"
+            },
+            {
+              "id": "desc1: inner afterEach",
+              "kind": "hook:after-each",
+              "nesting": 3,
+              "ordering": 40003,
+              "parentID": "desc1: inner"
+            }
+          ]
+        },
+        {
+          "id": "desc1: outer it1",
+          "kind": "assert:it:run",
+          "label": "desc1: outer it1",
+          "nesting": 2,
+          "ordering": 20000,
+          "parentID": "desc1: outer"
+        },
+        {
+          "id": "desc1: outer it2",
+          "kind": "assert:it:run",
+          "label": "desc1: outer it2",
+          "nesting": 2,
+          "ordering": 20001,
+          "parentID": "desc1: outer"
+        },
+        {
+          "id": "desc1: outer beforeAll",
+          "kind": "hook:before-all",
+          "nesting": 2,
+          "ordering": 0,
+          "parentID": "desc1: outer"
+        },
+        {
+          "id": "desc1: outer beforeEach",
+          "kind": "hook:before-each",
+          "nesting": 2,
+          "ordering": 10001,
+          "parentID": "desc1: outer"
+        },
+        {
+          "id": "desc1: outer afterAll",
+          "kind": "hook:after-all",
+          "nesting": 2,
+          "ordering": 50002,
+          "parentID": "desc1: outer"
+        },
+        {
+          "id": "desc1: outer afterEach",
+          "kind": "hook:after-each",
+          "nesting": 2,
+          "ordering": 40003,
+          "parentID": "desc1: outer"
+        }
+      ]
+    },
+    {
+      "id": "desc2: outer",
+      "kind": "describe:run",
+      "label": "desc2: outer",
+      "nesting": 1,
+      "ordering": 30001,
+      "parentID": "root node id",
+      "children": [
+        {
+          "id": "desc2: outer it1",
+          "kind": "assert:it:run",
+          "label": "desc2: outer it1",
+          "nesting": 2,
+          "ordering": 20000,
+          "parentID": "desc2: outer"
+        },
+        {
+          "id": "desc2: outer beforeAll",
+          "kind": "hook:before-all",
+          "nesting": 2,
+          "ordering": 0,
+          "parentID": "desc2: outer"
+        },
+        {
+          "id": "desc2: outer beforeEach",
+          "kind": "hook:before-each",
+          "nesting": 2,
+          "ordering": 10001,
+          "parentID": "desc2: outer"
+        },
+        {
+          "id": "desc2: outer afterAll",
+          "kind": "hook:after-all",
+          "nesting": 2,
+          "ordering": 50002,
+          "parentID": "desc2: outer"
+        },
+        {
+          "id": "desc2: outer afterEach",
+          "kind": "hook:after-each",
+          "nesting": 2,
+          "ordering": 40003,
+          "parentID": "desc2: outer"
+        }
+      ]
+    },
+    {
+      "id": "root beforeAll",
+      "kind": "hook:before-all",
+      "nesting": 1,
+      "ordering": 0,
+      "parentID": "root node id"
+    },
+    {
+      "id": "root beforeEach",
+      "kind": "hook:before-each",
+      "nesting": 1,
+      "ordering": 10001,
+      "parentID": "root node id"
+    },
+    {
+      "id": "root afterAll",
+      "kind": "hook:after-all",
+      "nesting": 1,
+      "ordering": 50002,
+      "parentID": "root node id"
+    },
+    {
+      "id": "root afterEach",
+      "kind": "hook:after-each",
+      "nesting": 1,
+      "ordering": 40003,
+      "parentID": "root node id"
+    }
+  ],
+  "kind": "tree-root-node",
+  "nesting": 0
+}

@@ -1,38 +1,71 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  margin: 0 auto;
+  height: 100vh;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-main {
+  border: 1px solid gray;
+  height: 100%;
+  flex: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.Forest {
+  display: flex; flex-direction: row;
+  border: 1px solid red;
+  height: 100%;
+  margin: 2px;
+  padding: 2px;
 }
+
+.TestTree {
+  /* background: steelblue; */
+  height: 100%;
+  width: 400px;
+  text-align: left;
+  font-size: 18px;
+  border: 1px solid orange;
+  margin: 2px;
+  padding: 2px;
+}
+
+.TestTree, .Suite, .Spec, .Group, .Leaf {
+  /* border: 1px solid violet; */
+  margin: 2px;
+  padding: 2px;
+}
+
+.Row {
+  display: flex;
+  flex-direction: row;
+}
+
+.Status {}
+
+/* .Spec {
+  border: 1px solid blue;
+  margin: 2px;
+  padding: 2px;
+}
+
+.Group {
+  border: 1px solid magenta;
+  margin: 1px;
+  padding: 1px;
+}
+
+.Leaf {
+  border: 1px solid violet;
+
+} */
+
+ul, li { list-style: none;}
