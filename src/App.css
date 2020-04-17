@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
 .App {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
   margin: 0 auto;
   height: 100vh;
@@ -13,7 +15,6 @@
 }
 
 .App-main {
-  border: 1px solid gray;
   height: 100%;
   flex: 1;
 }
@@ -47,7 +48,7 @@
 
 .AnalysisBody {
   padding: 48px;
-  max-width: 400px;
+  max-width: 50vh;
   word-wrap: break-word;
   overflow: scroll;
   margin: 0;

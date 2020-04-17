@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
+import JSONPretty from 'react-json-pretty';
 import classnames from "classnames";
 import { initialState, State } from "./Controller";
 import { SidebarRow } from "./Models";
@@ -164,11 +168,14 @@ export default class Forest extends React.Component<{}, State & ForestState> {
                                     parentId !== undefined && this.setState({ focusedRow: parentId })
                                 }}>visit parent</button>
                         </p>
-                        <p>
-                            <b>raw def:</b>
-                        &nbsp;
-                        <code>{JSON.stringify(analyzed.definition)}</code>
-                        </p>
+                        <div>
+                            <b>plan step:</b>
+                            <SyntaxHighlighter language="json" style={docco}>
+                                {JSON.stringify(analyzed, null, 2)}
+                            </SyntaxHighlighter>
+
+                            {/* <code>{JSON.stringify(analyzed.definition)}</code> */}
+                        </div>
                     </div>
                 </> : <p>Select a spec to analyze</p>}
             </div>
