@@ -7,8 +7,8 @@ export class LeafView extends React.Component<{ leaf: Leaf; }> {
         let { leaf } = this.props;
         return <div className="Leaf">
             <div className="Leaf__meta Row">
-                <span data-testid="leaf.name">{leaf.name}</span>
-                <StatusBug status={leaf.status} />
+                <span data-testid="leaf.name">{leaf.label}</span>
+                {/* <StatusBug status={leaf.status} /> */}
             </div>
         </div>;
     }

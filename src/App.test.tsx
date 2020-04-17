@@ -24,32 +24,32 @@ describe('Forest', () => {
   let mockGroup = new Group("hello parent", 'mock-group:-1')
 
   it('suite name', () => {
-    initialState.suite.name = 'hello world'
+    initialState.project.name = 'hello world'
     testIdMatches('suite.name', 'hello world')
   })
 
   it('spec name', () => {
-    initialState.suite.specs = [mockSpec]
+    initialState.project.specs = [mockSpec]
     testIdMatches('spec.name', 'hello spec')
   })
 
   it('group name', () => {
     mockSpec.groups = [mockGroup]
-    initialState.suite.specs = [mockSpec]
+    initialState.project.specs = [mockSpec]
     testIdMatches('group.name', 'hello parent')
   })
 
   it('nested group name', () => {
     mockGroup.nodes = [ new Group('hello child', 'mock-group:-2') ]
     mockSpec.groups = [mockGroup]
-    initialState.suite.specs = [mockSpec]
+    initialState.project.specs = [mockSpec]
     testIdMatches('group.name', ['hello parent', 'hello child'])
   })
 
   it('leaf name', () => {
     mockGroup.nodes = [ new Leaf('hello leaf!', 'mock-leaf:-1') ]
     mockSpec.groups = [ mockGroup ]
-    initialState.suite.specs = [ mockSpec ]
+    initialState.project.specs = [ mockSpec ]
     testIdMatches('leaf.name', 'hello leaf!')
   })
 

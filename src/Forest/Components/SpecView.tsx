@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { Spec } from "../Models";
 import { GroupView } from "./GroupView";
 import StatusBug from "./StatusBug";
+import { isDescribeNode } from "@packages/tr-common";
 
 type Props = { spec: Spec }
 export const SpecView: React.FC<Props> = (props: Props) => {
     const [toggle, setToggle] = useState(true);
     let { spec } = props;
-    let { groups } = spec;
+    let { children } = spec;
     return <div className="Spec">
         <div className="Spec__meta Row">
             <span
@@ -15,16 +16,17 @@ export const SpecView: React.FC<Props> = (props: Props) => {
                 data-testid="spec.name"
                 onClick={() => setToggle(!toggle)}
             >
-                {spec.name}
+                {spec.filePath}
             </span>
-            <StatusBug status={spec.status} />
+            {/* <StatusBug status={spec.status} /> -- todo infer? */}
         </div>
         {toggle && <div className="Spec__groups">
             <ul>
-                {groups.map(group => <li key={group.id}>
-                    <GroupView group={group} />
+                {children.map(group => <li key={group.id}>
+                    {isDescribeNode(group) && <GroupView group={group} />}
                 </li>)}
             </ul>
-        </div>}
+        </div>
+    }
     </div>;
 }

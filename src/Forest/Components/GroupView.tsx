@@ -2,12 +2,25 @@ import React, { useState } from "react";
 import { Group } from "../Models";
 import { LeafView } from "./LeafView";
 import StatusBug from "./StatusBug";
-type Props = { group: Group }
+import { isDescribeNode, InterfaceNode, isAssertNode } from "@packages/tr-common";
 
+const NodeView: React.FC<InterfaceNode> = (props) => {
+    let node = props;
+    if (isDescribeNode(node)) {
+        return <GroupView group={node} />
+    } else {
+        if (isAssertNode(node)) { //} || isHookNode(node)) {
+            return <LeafView leaf={node} />
+        }
+    }
+    return <>unknown node type: {node.kind}</>;
+}
+
+type Props = { group: Group }
 export const GroupView: React.FC<Props> = (props: Props) => {
     const [toggle, setToggle] = useState(true);
     let { group } = props;
-    let { nodes } = group;
+    let { children } = group;
     return <div className="Group">
         <div
           className="Group__meta Row"
@@ -16,16 +29,14 @@ export const GroupView: React.FC<Props> = (props: Props) => {
             <span
                 data-testid="group.name"
             >
-                {group.name}
+                {group.label}
             </span>
-            <StatusBug status={group.status} />
+            {/* <StatusBug status={group.status} /> */}
         </div>
         {toggle && <ul>
-            {nodes.map(node => <li key={node.id}>
-                {node instanceof Group
-                    ? <GroupView group={node} />
-                    : <LeafView leaf={node} />}
-
+            {children.map(node => <li key={node.id}>
+                <NodeView {...node} />
+                
             </li>)}
         </ul>}
     </div>;
