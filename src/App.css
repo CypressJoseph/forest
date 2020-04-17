@@ -18,7 +18,6 @@
   flex: 1;
 }
 
-
 .Forest {
   display: flex;
   flex-direction: row;
@@ -31,16 +30,14 @@
   flex-direction: column;
   flex: 1;
   overflow: scroll;
-  min-width: 400px;
-  /* background: #e0e0e0; */
+  min-width: 420px;
 }
 
 .Analysis {
-  flex: 2;
-  /* margin: 4px; */
-  /* padding: 12px; */
-  overflow: scroll;
-  display: flex; flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  flex: 5;
+  width: 100%;
 }
 
 .AnalysisHeader {
@@ -48,9 +45,15 @@
   padding: 12px;
 }
 
+.AnalysisBody {
+  padding: 48px;
+  max-width: 400px;
+  word-wrap: break-word;
+  overflow: scroll;
+  margin: 0;
+}
+
 .SidebarRow {
-  /* padding: 10px; */
-  /* padding-left: 30px; */
   user-select: none;
   display: flex;
   align-items: center;
@@ -60,13 +63,11 @@
 }
 
 .SidebarRowRoot {
-  /* background: #e0e0e0; */
   font-size: 18px;;
 }
 
 
 .SidebarRowLeaf {
-  /* background: #d0d0d0; */
   font-size: 16px;
 }
 
@@ -75,17 +76,11 @@
 }
 .SidebarRow-focused:hover {
   background: #eaeaea;
-  /* background: #fafafa; */
-}
-
-.SidebarRowLeaf.SidebarRow-focused {
-  /* background: #eaeaea; */
 }
 
 .SidebarRow__sigils {
   font-size: 16px;
   color: #606060;
-  /* background: #eaeaea; */
   flex: 1;
   height: 100%;
   width: 100%;

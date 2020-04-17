@@ -30,16 +30,18 @@ const Row = ({ data, onClickToggle, onClickTitle }: {
             isLeaf
               ? status
               : (isUnfolded ? "caret-down" : "caret-right")
+    const n = (nesting-1) * 3;
+              
     return <div className={cs}>
+
+        {[...Array(n)].map((e, i) =>
+            <span className="spacer" key={i}>&nbsp;</span>)
+        }
         <span
           className='SidebarRow__sigils'
           onClick={()=>isLeaf ? onClickTitle(data) : onClickToggle(data)}
         >
-            {/* {focus && '*'} */}
             <FontAwesomeIcon icon={sigil} />
-            {/* {isLeaf ? '' : (isUnfolded ? "-" : "+")} */}
-            {/* {isNested ? '|' : ''} */}
-            {/* {((isNested ? '>' : '') + '').padStart(data.nesting - 1, '-')} */}
         </span>
         &nbsp;&nbsp;
         <span
@@ -48,9 +50,6 @@ const Row = ({ data, onClickToggle, onClickTitle }: {
         >
             {description}
         </span>
-        {/* <span data-test-id='SidebarRow__nesting'>
-            <small>[depth: {nesting}]</small>
-        </span> */}
     </div>
 }
 
