@@ -1,4 +1,5 @@
 .App {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
   margin: 0 auto;
   height: 100vh;
@@ -21,53 +22,75 @@
 
 .Forest {
   display: flex;
-  flex-direction: column;
-  text-align: left;
-  border: 1px solid red;
-  height: 100%;
-  margin: 2px;
-  padding: 2px;
-}
-
-.TestTree {
-  /* background: steelblue; */
-  height: 100%;
-  width: 400px;
-  text-align: left;
-  font-size: 18px;
-  border: 1px solid orange;
-  margin: 2px;
-  padding: 2px;
-}
-
-.TestTree, .Suite, .Spec, .Group, .Leaf {
-  /* border: 1px solid violet; */
-  margin: 2px;
-  padding: 2px;
-}
-
-.Row {
-  display: flex;
   flex-direction: row;
+  text-align: left;
+  /* border: 1px solid red; */
+  height: 100%;
+  /* margin: 2px;
+  margin-top:5px;
+  padding: 2px; */
 }
 
-.Status {}
+.Tree {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: scroll;
+  min-width: 400px;
+  /* margin: 4px;
+  padding: 2px; */
+}
 
-/* .Spec {
-  border: 1px solid blue;
-  margin: 2px;
+.Analysis {
+  flex: 2;
+  margin: 4px;
   padding: 2px;
+  overflow: scroll;
 }
 
-.Group {
-  border: 1px solid magenta;
-  margin: 1px;
-  padding: 1px;
+.SidebarRow {
+  /* border: 1px solid #303030; */
+  padding: 20px;
+  user-select: none;
+  display: flex;
+  align-items: center;
 }
 
-.Leaf {
-  border: 1px solid violet;
+.SidebarRowRoot {
+  background: #e0e0e0;
+  font-size: 18px;;
+  /* border: 1px solid #606060; */
+}
 
-} */
+.SidebarRowRoot.SidebarRow-focused {
+  /* border: 1px solid #303030; */
+  background: #fafafa;
+}
 
-ul, li { list-style: none;}
+
+
+.SidebarRowLeaf {
+  background: #d0d0d0;
+  font-size: 16px;
+  /* border: none;  */
+}
+.SidebarRowLeaf.SidebarRow-focused {
+  background: #eaeaea;
+}
+
+.SidebarRow__sigils {
+  font-size: 36px;
+  color: #606060;
+  flex: 1;
+}
+
+.SidebarRow__desc {
+  /* font-size: 6px; */
+  color: #303030;
+  flex: 10;
+  /* font-size: 20px; */
+}
+
+/* .SidebarRow + .SidebarRow { border: 1px solid yellow; } */
+/* .SidebarRow + .SidebarRow + .SidebarRow { border: 1px solid green; } */
+
