@@ -1,236 +1,233 @@
-{
-    "plan": [
-      {
+[
+    {
         "kind": "step:suite-enter",
         "id": "f004a5a887be5be4921633527f20bd9c",
         "nesting": 1,
         "definition": {
-          "id": "f004a5a887be5be4921633527f20bd9c",
-          "parentID": "/Users/tgriesser/Github/cypress/cynode/packages/core/src/__tests__/crypto/hash.test.ts",
-          "description": "hash: string without slicing it",
-          "kind": "describe:run"
+            "id": "f004a5a887be5be4921633527f20bd9c",
+            "parentID": "/Users/tgriesser/Github/cypress/cynode/packages/core/src/__tests__/crypto/hash.test.ts",
+            "description": "hash: string without slicing it",
+            "kind": "describe:run"
         }
-      },
-      {
+    },
+    {
         "kind": "step:test-run",
         "id": "6c3c13d56784f40f03041d0ea42b1141",
         "nesting": 2,
         "definition": {
-          "id": "6c3c13d56784f40f03041d0ea42b1141",
-          "parentID": "f004a5a887be5be4921633527f20bd9c",
-          "description": "hashString(\"hello\") => 32 chars long string",
-          "kind": "assert:it:run"
+            "id": "6c3c13d56784f40f03041d0ea42b1141",
+            "parentID": "f004a5a887be5be4921633527f20bd9c",
+            "description": "hashString(\"hello\") => 32 chars long string",
+            "kind": "assert:it:run"
         }
-      },
-      {
+    },
+    {
         "kind": "step:test-run",
         "id": "65d0389bc1822b5091e93672a869e672",
         "nesting": 2,
         "definition": {
-          "id": "65d0389bc1822b5091e93672a869e672",
-          "parentID": "f004a5a887be5be4921633527f20bd9c",
-          "description": "hashing same string twice returns same hash",
-          "kind": "assert:it:run"
+            "id": "65d0389bc1822b5091e93672a869e672",
+            "parentID": "f004a5a887be5be4921633527f20bd9c",
+            "description": "hashing same string twice returns same hash",
+            "kind": "assert:it:run"
         }
-      },
-      {
+    },
+    {
         "kind": "step:test-run",
         "id": "657fbbb19b50e1773235d55637a4b746",
         "nesting": 2,
         "definition": {
-          "id": "657fbbb19b50e1773235d55637a4b746",
-          "parentID": "f004a5a887be5be4921633527f20bd9c",
-          "description": "hashing different strings returns different hashes",
-          "kind": "assert:it:run"
+            "id": "657fbbb19b50e1773235d55637a4b746",
+            "parentID": "f004a5a887be5be4921633527f20bd9c",
+            "description": "hashing different strings returns different hashes",
+            "kind": "assert:it:run"
         }
-      },
-      {
+    },
+    {
         "kind": "step:suite-exit",
         "id": "f004a5a887be5be4921633527f20bd9c",
         "nesting": 1,
         "definition": {
-          "id": "f004a5a887be5be4921633527f20bd9c",
-          "parentID": "/Users/tgriesser/Github/cypress/cynode/packages/core/src/__tests__/crypto/hash.test.ts",
-          "description": "hash: string without slicing it",
-          "kind": "describe:run"
+            "id": "f004a5a887be5be4921633527f20bd9c",
+            "parentID": "/Users/tgriesser/Github/cypress/cynode/packages/core/src/__tests__/crypto/hash.test.ts",
+            "description": "hash: string without slicing it",
+            "kind": "describe:run"
         }
-      },
-      {
+    },
+    {
         "kind": "step:suite-enter",
         "id": "8123257537260acca9f7debd9e6bd9fe",
         "nesting": 1,
         "definition": {
-          "id": "8123257537260acca9f7debd9e6bd9fe",
-          "parentID": "/Users/tgriesser/Github/cypress/cynode/packages/core/src/__tests__/crypto/hash.test.ts",
-          "description": "hash: string and slicing it before hashing",
-          "kind": "describe:run"
+            "id": "8123257537260acca9f7debd9e6bd9fe",
+            "parentID": "/Users/tgriesser/Github/cypress/cynode/packages/core/src/__tests__/crypto/hash.test.ts",
+            "description": "hash: string and slicing it before hashing",
+            "kind": "describe:run"
         }
-      },
-      {
+    },
+    {
         "kind": "step:test-run",
         "id": "cb5cd50c8e63deeaf3f178e5316a76ea",
         "nesting": 2,
         "definition": {
-          "id": "cb5cd50c8e63deeaf3f178e5316a76ea",
-          "parentID": "8123257537260acca9f7debd9e6bd9fe",
-          "description": "hashString(\"hello\", { slice: 8 }) => 32 chars long hash",
-          "kind": "assert:it:run"
+            "id": "cb5cd50c8e63deeaf3f178e5316a76ea",
+            "parentID": "8123257537260acca9f7debd9e6bd9fe",
+            "description": "hashString(\"hello\", { slice: 8 }) => 32 chars long hash",
+            "kind": "assert:it:run"
         }
-      },
-      {
+    },
+    {
         "kind": "step:test-run",
         "id": "5701a48c2fe3a3c81067de8391de11d5",
         "nesting": 2,
         "definition": {
-          "id": "5701a48c2fe3a3c81067de8391de11d5",
-          "parentID": "8123257537260acca9f7debd9e6bd9fe",
-          "description": "hashing same string shorter than 8 twice returns same hash",
-          "kind": "assert:it:run"
+            "id": "5701a48c2fe3a3c81067de8391de11d5",
+            "parentID": "8123257537260acca9f7debd9e6bd9fe",
+            "description": "hashing same string shorter than 8 twice returns same hash",
+            "kind": "assert:it:run"
         }
-      },
-      {
+    },
+    {
         "kind": "step:test-run",
         "id": "67a17a401a86b4ae999f435340a1547d",
         "nesting": 2,
         "definition": {
-          "id": "67a17a401a86b4ae999f435340a1547d",
-          "parentID": "8123257537260acca9f7debd9e6bd9fe",
-          "description": "hashing \"hello\" and \"heyday\" with slice 2 returns same hash",
-          "kind": "assert:it:run"
+            "id": "67a17a401a86b4ae999f435340a1547d",
+            "parentID": "8123257537260acca9f7debd9e6bd9fe",
+            "description": "hashing \"hello\" and \"heyday\" with slice 2 returns same hash",
+            "kind": "assert:it:run"
         }
-      },
-      {
+    },
+    {
         "kind": "step:suite-exit",
         "id": "8123257537260acca9f7debd9e6bd9fe",
         "nesting": 1,
         "definition": {
-          "id": "8123257537260acca9f7debd9e6bd9fe",
-          "parentID": "/Users/tgriesser/Github/cypress/cynode/packages/core/src/__tests__/crypto/hash.test.ts",
-          "description": "hash: string and slicing it before hashing",
-          "kind": "describe:run"
+            "id": "8123257537260acca9f7debd9e6bd9fe",
+            "parentID": "/Users/tgriesser/Github/cypress/cynode/packages/core/src/__tests__/crypto/hash.test.ts",
+            "description": "hash: string and slicing it before hashing",
+            "kind": "describe:run"
         }
-      },
-      {
+    },
+    {
         "kind": "step:suite-enter",
         "id": "e2c3a6f3c3aa8f192feeaf49f46b40de",
         "nesting": 1,
         "definition": {
-          "id": "e2c3a6f3c3aa8f192feeaf49f46b40de",
-          "parentID": "/Users/tgriesser/Github/cypress/cynode/packages/core/src/__tests__/crypto/hash.test.ts",
-          "description": "hash: strings without slicing them",
-          "kind": "describe:run"
+            "id": "e2c3a6f3c3aa8f192feeaf49f46b40de",
+            "parentID": "/Users/tgriesser/Github/cypress/cynode/packages/core/src/__tests__/crypto/hash.test.ts",
+            "description": "hash: strings without slicing them",
+            "kind": "describe:run"
         }
-      },
-      {
+    },
+    {
         "kind": "step:test-run",
         "id": "1066a77524653189e4d88e9aab4c5a0d",
         "nesting": 2,
         "definition": {
-          "id": "1066a77524653189e4d88e9aab4c5a0d",
-          "parentID": "e2c3a6f3c3aa8f192feeaf49f46b40de",
-          "description": "hashStrings([ \"hello\", \"world\" ]) => 32 chars long hash",
-          "kind": "assert:it:run"
+            "id": "1066a77524653189e4d88e9aab4c5a0d",
+            "parentID": "e2c3a6f3c3aa8f192feeaf49f46b40de",
+            "description": "hashStrings([ \"hello\", \"world\" ]) => 32 chars long hash",
+            "kind": "assert:it:run"
         }
-      },
-      {
+    },
+    {
         "kind": "step:test-run",
         "id": "19c6763cc4c24c12bab7b85f7c7766a3",
         "nesting": 2,
         "definition": {
-          "id": "19c6763cc4c24c12bab7b85f7c7766a3",
-          "parentID": "e2c3a6f3c3aa8f192feeaf49f46b40de",
-          "description": "hashStrings([ \"hello\", \"world\" ]) twice returns same hash",
-          "kind": "assert:it:run"
+            "id": "19c6763cc4c24c12bab7b85f7c7766a3",
+            "parentID": "e2c3a6f3c3aa8f192feeaf49f46b40de",
+            "description": "hashStrings([ \"hello\", \"world\" ]) twice returns same hash",
+            "kind": "assert:it:run"
         }
-      },
-      {
+    },
+    {
         "kind": "step:test-run",
         "id": "75b553f87da2709d0f8ca753550c15ac",
         "nesting": 2,
         "definition": {
-          "id": "75b553f87da2709d0f8ca753550c15ac",
-          "parentID": "e2c3a6f3c3aa8f192feeaf49f46b40de",
-          "description": "hashStrings([ \"hello\", \"world\" ]) and hashStrings([ \"world\", \"hello\" ]) returns different hashes",
-          "kind": "assert:it:run"
+            "id": "75b553f87da2709d0f8ca753550c15ac",
+            "parentID": "e2c3a6f3c3aa8f192feeaf49f46b40de",
+            "description": "hashStrings([ \"hello\", \"world\" ]) and hashStrings([ \"world\", \"hello\" ]) returns different hashes",
+            "kind": "assert:it:run"
         }
-      },
-      {
+    },
+    {
         "kind": "step:suite-exit",
         "id": "e2c3a6f3c3aa8f192feeaf49f46b40de",
         "nesting": 1,
         "definition": {
-          "id": "e2c3a6f3c3aa8f192feeaf49f46b40de",
-          "parentID": "/Users/tgriesser/Github/cypress/cynode/packages/core/src/__tests__/crypto/hash.test.ts",
-          "description": "hash: strings without slicing them",
-          "kind": "describe:run"
+            "id": "e2c3a6f3c3aa8f192feeaf49f46b40de",
+            "parentID": "/Users/tgriesser/Github/cypress/cynode/packages/core/src/__tests__/crypto/hash.test.ts",
+            "description": "hash: strings without slicing them",
+            "kind": "describe:run"
         }
-      },
-      {
+    },
+    {
         "kind": "step:suite-enter",
         "id": "483199a17625dde829d913d5e5857500",
         "nesting": 1,
         "definition": {
-          "id": "483199a17625dde829d913d5e5857500",
-          "parentID": "/Users/tgriesser/Github/cypress/cynode/packages/core/src/__tests__/crypto/hash.test.ts",
-          "description": "hash: strings and slicing them before hashing",
-          "kind": "describe:run"
+            "id": "483199a17625dde829d913d5e5857500",
+            "parentID": "/Users/tgriesser/Github/cypress/cynode/packages/core/src/__tests__/crypto/hash.test.ts",
+            "description": "hash: strings and slicing them before hashing",
+            "kind": "describe:run"
         }
-      },
-      {
+    },
+    {
         "kind": "step:test-run",
         "id": "dd34536fd4393f3e42d5f29f2e7697e4",
         "nesting": 2,
         "definition": {
-          "id": "dd34536fd4393f3e42d5f29f2e7697e4",
-          "parentID": "483199a17625dde829d913d5e5857500",
-          "description": "hashStrings([ \"hello\", \"world\" ], { slice: 8 }) => 32 chars long hash",
-          "kind": "assert:it:run"
+            "id": "dd34536fd4393f3e42d5f29f2e7697e4",
+            "parentID": "483199a17625dde829d913d5e5857500",
+            "description": "hashStrings([ \"hello\", \"world\" ], { slice: 8 }) => 32 chars long hash",
+            "kind": "assert:it:run"
         }
-      },
-      {
+    },
+    {
         "kind": "step:test-run",
         "id": "83b82c0aa63055e59fe9826cdef9320f",
         "nesting": 2,
         "definition": {
-          "id": "83b82c0aa63055e59fe9826cdef9320f",
-          "parentID": "483199a17625dde829d913d5e5857500",
-          "description": "hashStrings([ \"hello\", \"world\" ], { slice: 8 }) twice returns same hash",
-          "kind": "assert:it:run"
+            "id": "83b82c0aa63055e59fe9826cdef9320f",
+            "parentID": "483199a17625dde829d913d5e5857500",
+            "description": "hashStrings([ \"hello\", \"world\" ], { slice: 8 }) twice returns same hash",
+            "kind": "assert:it:run"
         }
-      },
-      {
+    },
+    {
         "kind": "step:test-run",
         "id": "0166bbf2cad4d8b15ed668f1b5231483",
         "nesting": 2,
         "definition": {
-          "id": "0166bbf2cad4d8b15ed668f1b5231483",
-          "parentID": "483199a17625dde829d913d5e5857500",
-          "description": "hashStrings([ \"he\", \"llo\" ], { slice: 4 }), hashStrings([ \"he\", \"ld\" ], { slice: 4 }) returns different hashes",
-          "kind": "assert:it:run"
+            "id": "0166bbf2cad4d8b15ed668f1b5231483",
+            "parentID": "483199a17625dde829d913d5e5857500",
+            "description": "hashStrings([ \"he\", \"llo\" ], { slice: 4 }), hashStrings([ \"he\", \"ld\" ], { slice: 4 }) returns different hashes",
+            "kind": "assert:it:run"
         }
-      },
-      {
+    },
+    {
         "kind": "step:test-run",
         "id": "55049215aafd1844c9f4ef619a8c34d6",
         "nesting": 2,
         "definition": {
-          "id": "55049215aafd1844c9f4ef619a8c34d6",
-          "parentID": "483199a17625dde829d913d5e5857500",
-          "description": "hashStrings([ \"he\", \"llo\" ], { slice: 3 }), hashStrings([ \"he\", \"ld\" ], { slice: 3 }) returns same hash",
-          "kind": "assert:it:run"
+            "id": "55049215aafd1844c9f4ef619a8c34d6",
+            "parentID": "483199a17625dde829d913d5e5857500",
+            "description": "hashStrings([ \"he\", \"llo\" ], { slice: 3 }), hashStrings([ \"he\", \"ld\" ], { slice: 3 }) returns same hash",
+            "kind": "assert:it:run"
         }
-      },
-      {
+    },
+    {
         "kind": "step:suite-exit",
         "id": "483199a17625dde829d913d5e5857500",
         "nesting": 1,
         "definition": {
-          "id": "483199a17625dde829d913d5e5857500",
-          "parentID": "/Users/tgriesser/Github/cypress/cynode/packages/core/src/__tests__/crypto/hash.test.ts",
-          "description": "hash: strings and slicing them before hashing",
-          "kind": "describe:run"
+            "id": "483199a17625dde829d913d5e5857500",
+            "parentID": "/Users/tgriesser/Github/cypress/cynode/packages/core/src/__tests__/crypto/hash.test.ts",
+            "description": "hash: strings and slicing them before hashing",
+            "kind": "describe:run"
         }
-      }
-    ]
-}
-  
+    }
+]

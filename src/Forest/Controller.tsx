@@ -1,12 +1,13 @@
 import tree from './tree.json';
-import { Project, Leaf, Spec } from './Models';
+import plan from './plan.json';
+import { Project, Leaf, Spec, SidebarRow } from './Models';
 // import assertNever from 'assert-never';
 // import { Project, ForestEvent, ProjectUpdated, Spec, Group, Leaf } from './Models';
 
 let fakeSpec: Spec = tree as Spec;
 let fakeProject: Project = [fakeSpec];
 
-export type State = { project?: Project }
+export type State = { rows: SidebarRow[]; } //project?: Project }
 // let fakeExpect = new Leaf("expect(working).toBe(true)", 'leaf:-1')
 
 // let fakeDescribe = new Group("When I open the product", 'group:-1')
@@ -24,7 +25,8 @@ export type State = { project?: Project }
 // let fakeProject: Project = projec; //new Project('my-first-project', 'project:-1')
 // fakeProject.specs.push(fakeSpec)
 
-export const initialState: State = { project: fakeProject }
+let rows = plan as SidebarRow[];
+export const initialState: State = { rows } //project: fakeProject }
 
 // export const fakeEvents: ForestEvent[] = [
 //     { kind: 'project:updated', suite: fakeProject },

@@ -7,7 +7,7 @@ export type Spec = RootNode // todo: PlanStep[]
 export type Group = DescribeNode
 export type Leaf = AssertNode //| HookNode
 
-// export type SidebarRow = TestStep
+export type SidebarRow = TestStep
 
 // type PlanStep = // basic entity
 // export abstract class Entity {

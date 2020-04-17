@@ -20,7 +20,9 @@
 
 
 .Forest {
-  display: flex; flex-direction: row;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
   border: 1px solid red;
   height: 100%;
   margin: 2px;
