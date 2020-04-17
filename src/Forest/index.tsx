@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import classnames from "classnames";
 import { initialState, State } from "./Controller";
 import { SidebarRow } from "./Models";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
-type RowMeta = { isUnfolded: boolean, focus: boolean, isLeaf: boolean, index: number }
+type RowMeta = {
+    isUnfolded: boolean,
+    isFocused: boolean,
+    isLeaf: boolean,
+    index: number,
+}
 const Row = ({ data, onClickToggle, onClickTitle }: {
     data: SidebarRow & RowMeta,
     onClickToggle: Function,
     onClickTitle: Function,
 }) => {
-    let { kind, nesting, isUnfolded, isLeaf, definition, focus } = data
+    let { kind, nesting, isUnfolded, isLeaf, definition, isFocused: focus } = data
     let { description } = definition
     let isNested = nesting > 1
     let cs = classnames(
@@ -18,19 +25,26 @@ const Row = ({ data, onClickToggle, onClickTitle }: {
         isLeaf && "SidebarRowLeaf",
         focus && "SidebarRow-focused"
     )
-    return <div className={cs} onClick={()=>onClickTitle(data)}>
+    let status: IconProp = 'check'
+    let sigil: IconProp =
+            isLeaf
+              ? status
+              : (isUnfolded ? "caret-down" : "caret-right")
+    return <div className={cs}>
         <span
           className='SidebarRow__sigils'
-          onClick={()=>onClickToggle(data)}
+          onClick={()=>isLeaf ? onClickTitle(data) : onClickToggle(data)}
         >
             {/* {focus && '*'} */}
-            {isLeaf ? '' : (isUnfolded ? "-" : "+")}
-            {isNested ? '|' : ''}
-            {((isNested ? '>' : '') + '').padStart(data.nesting - 1, '-')}
+            <FontAwesomeIcon icon={sigil} />
+            {/* {isLeaf ? '' : (isUnfolded ? "-" : "+")} */}
+            {/* {isNested ? '|' : ''} */}
+            {/* {((isNested ? '>' : '') + '').padStart(data.nesting - 1, '-')} */}
         </span>
         &nbsp;&nbsp;
         <span
-          className='SidebarRow__desc'
+            className='SidebarRow__desc'
+            onClick={() => onClickTitle(data)}
         >
             {description}
         </span>
@@ -72,6 +86,8 @@ export default class Forest extends React.Component<{}, State & ForestState> {
     }
 
     render() {
+        // const up = useKey('up')
+
         const dontRender = ['step:suite-exit' ]
         let { rows, rowMeta } = this.state;
 
@@ -93,7 +109,7 @@ export default class Forest extends React.Component<{}, State & ForestState> {
                 skipDepth = row.nesting
             }
 
-            augmented.focus = this.state.focusedRow === index
+            augmented.isFocused = this.state.focusedRow === index
 
             if (dontRender.includes(row.kind)) { return }
 
@@ -107,13 +123,11 @@ export default class Forest extends React.Component<{}, State & ForestState> {
                         this.setState({ rowMeta })
                     }}
                     onClickTitle={() => {
-                        // let meta: RowMeta = rowMeta[augmented.index]
-                        // meta.toggle = !meta.toggle
                         if (this.state.focusedRow === index) {
                             this.setState({ focusedRow: -1 })
                         } else {
-                        let meta: RowMeta = rowMeta[augmented.index]
-                        meta.isUnfolded = true // !meta.toggle
+                            let meta: RowMeta = rowMeta[augmented.index]
+                            meta.isUnfolded = true
                             this.setState({ rowMeta, focusedRow: index })
                         }
                     }}
@@ -128,32 +142,35 @@ export default class Forest extends React.Component<{}, State & ForestState> {
             <div className="Tree">{elements}</div>
             <div className="Analysis">
                 {analyzed ? <>
+                <div className="AnalysisHeader">
                     <h1>{analyzed.definition.description}</h1>
-                    <p>
-                        <b>kind:</b>
+                    </div>
+                    <div className="AnalysisBody">
+                        <p>
+                            <b>kind:</b>
                         &nbsp;
                         {analyzed.definition.kind}
-                    </p>
-                    <p>
-                        <b>id:</b>
+                        </p>
+                        <p>
+                            <b>id:</b>
+                            <p>{analyzed.definition.id}</p>
+                        </p>
+                        <p>
+                            <b>parent id:</b>
                         &nbsp;
-                        {analyzed.definition.id}
-                    </p>
-                    <p>
-                        <b>parent id:</b>
-                        &nbsp;
-                        {analyzed.definition.parentID}
-                        <button 
-                        disabled={!parent}
-                        onClick={() => {
-                            parentId && this.setState({ focusedRow: parentId })
-                        }}>visit parent</button>
-                    </p>
-                    <p>
-                        <b>raw def:</b>
+                        {analyzed.definition.parentID} [{parentId}]
+                        <button
+                                disabled={!parent}
+                                onClick={() => {
+                                    parentId !== undefined && this.setState({ focusedRow: parentId })
+                                }}>visit parent</button>
+                        </p>
+                        <p>
+                            <b>raw def:</b>
                         &nbsp;
                         <code>{JSON.stringify(analyzed.definition)}</code>
-                    </p>
+                        </p>
+                    </div>
                 </> : <p>Select a spec to analyze</p>}
             </div>
         </div>;

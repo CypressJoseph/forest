@@ -3,7 +3,6 @@
   text-align: center;
   margin: 0 auto;
   height: 100vh;
-  /* height: 100%; */
   display: flex;
   flex-direction: column;
 }
@@ -24,11 +23,7 @@
   display: flex;
   flex-direction: row;
   text-align: left;
-  /* border: 1px solid red; */
   height: 100%;
-  /* margin: 2px;
-  margin-top:5px;
-  padding: 2px; */
 }
 
 .Tree {
@@ -37,60 +32,70 @@
   flex: 1;
   overflow: scroll;
   min-width: 400px;
-  /* margin: 4px;
-  padding: 2px; */
+  /* background: #e0e0e0; */
 }
 
 .Analysis {
   flex: 2;
-  margin: 4px;
-  padding: 2px;
+  /* margin: 4px; */
+  /* padding: 12px; */
   overflow: scroll;
+  display: flex; flex-direction: column;
+}
+
+.AnalysisHeader {
+  background: #fafafa;
+  padding: 12px;
 }
 
 .SidebarRow {
-  /* border: 1px solid #303030; */
-  padding: 20px;
+  /* padding: 10px; */
+  /* padding-left: 30px; */
   user-select: none;
   display: flex;
   align-items: center;
 }
-
-.SidebarRowRoot {
-  background: #e0e0e0;
-  font-size: 18px;;
-  /* border: 1px solid #606060; */
-}
-
-.SidebarRowRoot.SidebarRow-focused {
-  /* border: 1px solid #303030; */
+.SidebarRow:hover {
   background: #fafafa;
 }
 
+.SidebarRowRoot {
+  /* background: #e0e0e0; */
+  font-size: 18px;;
+}
 
 
 .SidebarRowLeaf {
-  background: #d0d0d0;
+  /* background: #d0d0d0; */
   font-size: 16px;
-  /* border: none;  */
 }
-.SidebarRowLeaf.SidebarRow-focused {
+
+.SidebarRow-focused {
   background: #eaeaea;
+}
+.SidebarRow-focused:hover {
+  background: #eaeaea;
+  /* background: #fafafa; */
+}
+
+.SidebarRowLeaf.SidebarRow-focused {
+  /* background: #eaeaea; */
 }
 
 .SidebarRow__sigils {
-  font-size: 36px;
+  font-size: 16px;
   color: #606060;
+  /* background: #eaeaea; */
   flex: 1;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .SidebarRow__desc {
-  /* font-size: 6px; */
   color: #303030;
   flex: 10;
-  /* font-size: 20px; */
+  padding: 4px;
 }
-
-/* .SidebarRow + .SidebarRow { border: 1px solid yellow; } */
-/* .SidebarRow + .SidebarRow + .SidebarRow { border: 1px solid green; } */
-
